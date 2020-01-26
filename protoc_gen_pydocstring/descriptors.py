@@ -48,7 +48,7 @@ class Message:
         if self._comment:
             result += f"{self._comment}\n"
         if self._fields:
-            result += f"\nArguments:\n{self._arguments()}\n"
+            result += f"\nAttributes:\n{self._arguments()}\n"
         return result
 
     def _arguments(self) -> str:
