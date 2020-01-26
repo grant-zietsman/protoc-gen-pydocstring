@@ -3,8 +3,6 @@ from setuptools import setup, find_packages
 version = open('version').read()
 
 install_requires = [
-    'grpcio >= 1.10, < 2',
-    'grpcio-tools >= 1.10, < 2',
 ]
 
 test_require = [

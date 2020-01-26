@@ -98,7 +98,10 @@ def generate_protobuf_registry(proto_file: FileDescriptorProto) -> Registry:
     # register messages
     for message_index, message_descriptor in enumerate(proto_file.message_type):
         message_path = (MESSAGE_TYPE_INDEX, message_index)
-        message_name = message_descriptor.name
+        if proto_file.package:
+            message_name = f"{proto_file.package}.{message_descriptor.name}"
+        else:
+            message_name = message_descriptor.name
         register_message(message_path, message_name, message_descriptor)
 
     return registry
