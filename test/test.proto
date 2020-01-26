@@ -1,0 +1,52 @@
+syntax = "proto2";
+
+// Useful for comments...
+//
+// ...some more comments
+//
+// Todo:
+//     this needs to be done
+message Outer {
+    // This is an enum.
+    enum Options {
+        NONE = 0;
+        OPT1 = 1;
+        OPT2 = 2;
+        OPT3 = 3;
+    }
+    // This comment applies to field 1.
+    required Options options = 1; // This also applies to field 1.
+    required string text = 2;
+    required Note note = 3;
+    // This is a nested class.
+    message Inner {
+        // With a value.
+        required string value = 1;
+        // ...and another nested message.
+        message SuperInner {
+            // With some numeric value.
+            required int32 num = 1;
+        }
+        // Testing branching.
+        message SuperInner2 {
+            // ...and more nesting.
+            required int32 num = 1;
+        }
+    }
+    // Another example...
+    message Inner2 {
+        // ...and another field.
+        required string value = 1;
+        // ...with a nested message.
+        message SuperInner {
+            // ...and number.
+            required int32 num = 1;
+        }
+    }
+}
+
+
+// Another message
+message Note {
+    required string text = 1; // with a text field
+}

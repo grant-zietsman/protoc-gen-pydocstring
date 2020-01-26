@@ -1,0 +1,7 @@
+.vscode
+
+__pycache__
+
+**/*_pb2.py
+
+**/*.egg-info
